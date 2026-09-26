@@ -19,11 +19,11 @@ const IncomeExpenses = () => {
 
   return (
     <div className="inc-exp-container">
-      <div>
+      <div className='income-card'>
         <h4>Income</h4>
         <p className="money plus">+Rp{numberWithCommas(income)}</p>
       </div>
-      <div>
+      <div className='expense-card'>
         <h4>Expense</h4>
         <p className="money minus">-Rp{numberWithCommas(expense)}</p>
       </div>

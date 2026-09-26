@@ -2,14 +2,29 @@
 
 :root {
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --bg-global: #f8fafc;       /* Abu-abu sangat muda untuk background layar */
+  --bg-card: #ffffff;         /* Putih bersih untuk card kontainer */
+  --text-main: #0f172a;       /* Slate gelap untuk teks utama & judul */
+  --text-muted: #64748b;      /* Abu-abu medium untuk label (Text, Amount) */
+  --primary-btn: #4f46e5;     /* Indigo modern untuk tombol "Add transaction" */
+  --primary-btn-hover: #4338ca;
+  
+  --income-green: #10b981;    /* Hijau Emerald/Mint untuk Income & tanda (+) */
+  --income-bg: #ecfdf5;       /* Background tipis penanda Income */
+  --expense-red: #ef4444;      /* Merah Rose untuk Expense & tanda (-) */
+  --expense-bg: #fef2f2;      /* Background tipis penanda Expense */
+  
+  --border-color: #e2e8f0;    /* Garis pembatas halus */
+  --input-focus: #818cf8;     /* Warna border saat input diklik */
 }
+
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: var(--bg-global);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,9 +35,36 @@ body {
   font-size: 18px;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  background-color: var(--bg-card);
+  box-shadow: var(--box-shadow);
+  height: 60px;
+  font-size: medium;
+}
+
 .container {
-  margin: 30px auto;
-  width: 400px;
+  margin: 8px auto;
+  width: 550px;
+  background-color: var(--bg-card);
+  padding: 50px;
+  box-shadow: var(--box-shadow);
+}
+
+.income-card {
+  background-color: var(--income-bg);
+  padding: 16px;
+}
+
+.expense-card {
+  background-color: var(--expense-bg);
+  padding: 16px;
+}
+
+label {
+  color: var(--text-muted);
 }
 
 h1 {
@@ -39,6 +81,7 @@ h3 {
 h4 {
   margin: 0;
   text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 .inc-exp-container {
@@ -66,11 +109,11 @@ h4 {
 }
 
 .money.plus {
-  color: #2ecc71;
+  color: var(--income-green);
 }
 
 .money.minus {
-  color: #c0392b;
+  color: var(--expense-red);
 }
 
 label {
@@ -90,7 +133,7 @@ input[type='number'] {
 
 .btn {
   cursor: pointer;
-  background-color: #9c88ff;
+  background-color: var(--primary-btn);
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
