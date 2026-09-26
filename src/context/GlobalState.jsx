@@ -2,9 +2,23 @@ import React, { createContext, useReducer, useEffect } from 'react';
 import AppReducer from './AppReducer';
 
 // 1. Ambil data awal dari localStorage (jika kosong, gunakan array kosong)
+// Ambil dan validasi data dari localStorage dengan aman
+const getInitialTransactions = () => {
+  
+  const saved = localStorage.getItem('transactions');
+  if (!saved || saved === 'undefined') return [];
+  
+  try {
+    return JSON.parse(saved);
+  } catch (e) {
+    return [];
+  }
+};
+
 const initialState = {
-  transactions: JSON.parse(localStorage.getItem('transactions')) || []
-}
+  transactions: getInitialTransactions()
+};
+
 
 // Create context
 export const GlobalContext = createContext(initialState);
