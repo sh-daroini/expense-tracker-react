@@ -41,7 +41,7 @@ const TransactionList = () => {
           onClick={() => setFilter('income')}
           className={`px-3 py-1.5 font-medium rounded-lg transition-colors ${
             filter === 'income' 
-              ? 'bg-[#e6f4ea] text-green-700 font-semibold' 
+              ? 'bg-[#e6f4ea] text-green-700 shadow-sm font-semibold' 
               : 'text-[#78847d] hover:text-green-600'
           }`}
         >
@@ -51,7 +51,7 @@ const TransactionList = () => {
           onClick={() => setFilter('expense')}
           className={`px-3 py-1.5 font-medium rounded-lg transition-colors ${
             filter === 'expense' 
-              ? 'bg-[#fce8e6] text-red-700 font-semibold' 
+              ? 'bg-[#fce8e6] text-red-700 shadow-sm font-semibold' 
               : 'text-[#78847d] hover:text-red-600'
           }`}
         >
