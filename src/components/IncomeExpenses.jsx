@@ -18,14 +18,20 @@ const IncomeExpenses = () => {
   ).toFixed(2);
 
   return (
-    <div className="inc-exp-container">
-      <div className='income-card'>
-        <h4>Income</h4>
-        <p className="money plus">+Rp{numberWithCommas(income)}</p>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="rounded-2xl border border-[#e7ebe6] bg-white p-5 sm:p-6">
+        <div className="flex items-center justify-between">
+          <h3 className="text-sm font-semibold text-[#78847d]">Income</h3>
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-[#eef8dc] text-lg text-[#5b8527]">↙</span>
+        </div>
+        <p className="mt-4 font-['Manrope'] text-2xl font-bold tracking-tight text-[#315d28]">+ Rp {numberWithCommas(income)}</p>
       </div>
-      <div className='expense-card'>
-        <h4>Expense</h4>
-        <p className="money minus">-Rp{numberWithCommas(expense)}</p>
+      <div className="rounded-2xl border border-[#e7ebe6] bg-white p-5 sm:p-6">
+        <div className="flex items-center justify-between">
+          <h3 className="text-sm font-semibold text-[#78847d]">Expenses</h3>
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-[#fff0e8] text-lg text-[#c66a43]">↗</span>
+        </div>
+        <p className="mt-4 font-['Manrope'] text-2xl font-bold tracking-tight text-[#a95132]">− Rp {numberWithCommas(expense)}</p>
       </div>
     </div>
   )

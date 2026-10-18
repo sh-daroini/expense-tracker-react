@@ -1,195 +1,44 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+@import 'tailwindcss';
 
 :root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  --bg-global: #f8fafc;       /* Abu-abu sangat muda untuk background layar */
-  --bg-card: #ffffff;         /* Putih bersih untuk card kontainer */
-  --text-main: #0f172a;       /* Slate gelap untuk teks utama & judul */
-  --text-muted: #64748b;      /* Abu-abu medium untuk label (Text, Amount) */
-  --primary-btn: #4f46e5;     /* Indigo modern untuk tombol "Add transaction" */
-  --primary-btn-hover: #4338ca;
-  
-  --income-green: #10b981;    /* Hijau Emerald/Mint untuk Income & tanda (+) */
-  --income-bg: #ecfdf5;       /* Background tipis penanda Income */
-  --expense-red: #ef4444;      /* Merah Rose untuk Expense & tanda (-) */
-  --expense-bg: #fef2f2;      /* Background tipis penanda Expense */
-  
-  --border-color: #e2e8f0;    /* Garis pembatas halus */
-  --input-focus: #818cf8;     /* Warna border saat input diklik */
+  font-family: 'DM Sans', sans-serif;
+  color: #17211d;
+  background: #f5f7f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: var(--bg-global);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin: 0;
+  min-width: 320px;
   min-height: 100vh;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  padding-left: 24px;
-  background-color: var(--bg-card);
-  box-shadow: var(--box-shadow);
-  height: 60px;
-  font-size: medium;
+button,
+input {
+  font: inherit;
 }
 
-.container {
-  margin: 8px auto;
-  width: 550px;
-  background-color: var(--bg-card);
-  padding: 50px;
-  box-shadow: var(--box-shadow);
-}
-
-.income-card {
-  background-color: var(--income-bg);
-  padding: 16px;
-}
-
-.expense-card {
-  background-color: var(--expense-bg);
-  padding: 16px;
-}
-
-label {
-  color: var(--text-muted);
-}
-
-h1 {
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-h3 {
-  border-bottom: 1px solid #bbb;
-  padding-bottom: 10px;
-  margin: 40px 0 10px;
-}
-
-h4 {
-  margin: 0;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.inc-exp-container {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-}
-
-.inc-exp-container > div {
-  flex: 1;
-  text-align: center;
-}
-
-.inc-exp-container > div:first-of-type {
-  border-right: 1px solid #dedede;
-}
-
-.money {
-  font-size: 20px;
-  letter-spacing: 1px;
-  margin: 5px 0;
-}
-
-.money.plus {
-  color: var(--income-green);
-}
-
-.money.minus {
-  color: var(--expense-red);
-}
-
-label {
-  display: inline-block;
-  margin: 10px 0;
-}
-
-input[type='text'],
-input[type='number'] {
-  border: 1px solid #dedede;
-  border-radius: 2px;
-  display: block;
-  font-size: 16px;
-  padding: 10px;
-  width: 100%;
-}
-
-.btn {
+button {
   cursor: pointer;
-  background-color: var(--primary-btn);
-  box-shadow: var(--box-shadow);
-  color: #fff;
-  border: 0;
-  display: block;
-  font-size: 16px;
-  margin: 10px 0 30px;
-  padding: 10px;
-  width: 100%;
 }
 
-.btn:focus,
-.delete-btn:focus {
-  outline: 0;
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }
 
-.list {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 40px;
-}
-
-.list li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #333;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.list li.plus {
-  border-right: 5px solid #2ecc71;
-}
-
-.list li.minus {
-  border-right: 5px solid #c0392b;
-}
-
-.delete-btn {
-  cursor: pointer;
-  background-color: #e74c3c;
-  border: 0;
-  color: #fff;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-100%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.list li:hover .delete-btn {
-  opacity: 1;
+::selection {
+  background: #c8f169;
+  color: #17211d;
 }
